@@ -1,6 +1,7 @@
 package be.uantwerpen.fti.ei.UI.Panels;
 
 import be.uantwerpen.fti.ei.Database.Database;
+import be.uantwerpen.fti.ei.UI.Windows.UserWindow;
 import be.uantwerpen.fti.ei.Users.User;
 
 import javax.swing.*;
@@ -10,6 +11,7 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 public class UserDBPanel extends JPanel implements ActionListener, Observer {
     private ArrayList<User> UserArrayList = new ArrayList<>();
@@ -56,8 +58,25 @@ public class UserDBPanel extends JPanel implements ActionListener, Observer {
     public void actionPerformed(ActionEvent e) {
         switch (e.getActionCommand()){
             case "Add user":
-
+                UserWindow UW = new UserWindow();
+                break;
+            case "Remove user":
+                AtomicBoolean error = new AtomicBoolean(false);
+                if(List.getSelectedValue() != null){
+                    Database.getTicketDB().forEach(ticket -> {
+                        if(ticket.getUser().equals(List.getSelectedValue().getID()))
+                            error.set(true);
+                        else if(ticket.getIndebted().containsKey(List.getSelectedValue().getID()))
+                            error.set(true);
+                    });
+                    if(!error.get())
+                        Database.getUserDB().remove(List.getSelectedValue().getID());
+                    else
+                        JOptionPane.showMessageDialog(null, "Remove the tickets containing this person", "Warning", JOptionPane.WARNING_MESSAGE);
+                }
+                break;
         }
+        Refresh();
     }
 
     @Override
