@@ -3,8 +3,6 @@ package be.uantwerpen.fti.ei.Database;
 import be.uantwerpen.fti.ei.Tickets.Tickets;
 import be.uantwerpen.fti.ei.Users.User;
 
-
-import javax.xml.crypto.Data;
 import java.util.*;
 import java.util.function.Consumer;
 

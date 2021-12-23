@@ -72,5 +72,10 @@ public class Tickets {
     @Override
     public String toString(){
         String string = String.format("%s : %.2f paid by %s. Persons: ",ticket,price, Database.getUserDB().get(user).getName());
+        for (UUID ID: this.Indebted.keySet()){
+            string += String.format("%s, ", Database.getUserDB().get(ID).getName());
+        }
+        string = string.substring(0, string.length() -2);
+        return string;
     }
 }
