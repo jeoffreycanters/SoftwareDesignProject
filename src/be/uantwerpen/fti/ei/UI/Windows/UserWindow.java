@@ -15,7 +15,7 @@ public class UserWindow extends JFrame implements ActionListener {
         super("Money Tracker");
         this.setSize(1000,1000);
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-
+        Initialise();
         this.setVisible(true);
     }
 
