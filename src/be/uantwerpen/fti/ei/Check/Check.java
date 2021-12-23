@@ -80,7 +80,7 @@ public class Check {
 
     }
 
-    public static String print()
+    public String print()
     {
         this.totalcheck = calculateCheck();
         solution.clear();
