@@ -1,6 +1,7 @@
 package be.uantwerpen.fti.ei;
 
 
+import be.uantwerpen.fti.ei.UI.UIFrame;
 
 public class Main {
 
@@ -12,7 +13,6 @@ public class Main {
     public Main(){}
 
     public void run(){
-
-
+        UIFrame UI = new UIFrame();
     }
 }
