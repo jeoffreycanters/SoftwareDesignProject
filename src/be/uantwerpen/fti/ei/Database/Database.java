@@ -63,11 +63,11 @@ public class Database<T> extends Observable implements Iterable<T> {
 
     @Override
     public void forEach(Consumer<? super T> action) {
-        Iterable.super.forEach(action);
+        this.dbMap.values().iterator();
     }
 
     @Override
     public Spliterator<T> spliterator() {
-        return Iterable.super.spliterator();
+        return this.dbMap.values().spliterator();
     }
 }
