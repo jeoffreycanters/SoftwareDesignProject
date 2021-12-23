@@ -9,23 +9,9 @@ import java.util.ArrayList;
 import java.util.UUID;
 
 public abstract class TicketFactory {
-    public abstract Tickets CreateTicket(String ticket, UUID user);
 
-    public Tickets CreateTicket(String ticket, UUID user, ArrayList<UUID> users){
-        Tickets ticketNew = CreateTicket(ticket, user);
-        //ticket1.setIndebted(users)
-        return ticketNew;
-    }
+    public abstract Tickets createTicket(String ticketType, UUID Payer);
 
-    public Tickets CreateTicket(String ticket, User user){
-        return CreateTicket(ticket, user); //user.getID()
-    }
 
-    public Tickets CreateTicket(String ticket, User user, ArrayList<UUID> users){
-        Tickets ticketNew = CreateTicket(ticket, user);
-        //ticketNew.setIndebted(users)
-        return ticketNew;
-    }
 
-    public static TicketFactory
 }
