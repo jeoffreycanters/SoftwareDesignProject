@@ -1,4 +1,4 @@
 package be.uantwerpen.fti.ei.UI.Windows;
 
-public class PersonWindow {
+public class UserWindow {
 }
