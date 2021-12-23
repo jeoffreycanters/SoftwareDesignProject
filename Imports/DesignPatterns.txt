@@ -1,0 +1,29 @@
+Abstract Factory => Users + tickets
+Singleton => database for Persons + tickets
+MVC => Interface
+Observer => updaten van kosten
+theorielessen =>?
+
+ADD USER
+if click on button:
+    insert(String name)
+    User name = factory.getUser(name)
+
+ADD TICKET
+if click on button
+    String choice = insert("random" of "even")
+    String name = insert(name)
+    if(choice == "random")
+        Ticket name = factory.getTicket(name, "random")
+        int amount = insert(value)
+        for(int i=0;i<amount;i++){
+        value i = insert(value);
+        }
+    elsif(choice == "even")
+        Ticket name = factory.getTicket(name, "even")
+        int value = insert(value)
+        => SPLIT VALUE OVER USERS
+    else
+        print("foute keuze")
+
+
