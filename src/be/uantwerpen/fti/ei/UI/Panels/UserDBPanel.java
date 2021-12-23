@@ -64,7 +64,7 @@ public class UserDBPanel extends JPanel implements ActionListener, Observer {
                 AtomicBoolean error = new AtomicBoolean(false);
                 if(List.getSelectedValue() != null){
                     Database.getTicketDB().forEach(ticket -> {
-                        if(ticket.getUser().equals(List.getSelectedValue().getID()))
+                        if(ticket.getPayer().equals(List.getSelectedValue().getID()))
                             error.set(true);
                         else if(ticket.getIndebted().containsKey(List.getSelectedValue().getID()))
                             error.set(true);

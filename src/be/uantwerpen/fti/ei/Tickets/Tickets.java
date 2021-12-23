@@ -10,15 +10,16 @@ import java.util.UUID;
 import java.util.stream.Collectors;
 
 public class Tickets {
+    public UUID getPayer;
     protected String ticket;
     protected UUID ID;
-    protected UUID user;
+    protected UUID payer;
     protected double cost = 0;
     protected HashMap<UUID, Double> Indebted;
 
     public Tickets(String ticket, UUID user){
         this.ticket = ticket;
-        this.user = user;
+        this.payer = payer;
         this.ID = UUID.randomUUID();
         this.Indebted = new HashMap<>();
     }
@@ -35,8 +36,8 @@ public class Tickets {
         return ID;
     }
 
-    public UUID getUser() {
-        return user;
+    public UUID getPayer() {
+        return payer;
     }
 
     public double getCost() {
@@ -71,7 +72,7 @@ public class Tickets {
 
     @Override
     public String toString(){
-        String string = String.format("%s : %.2f paid by %s. Persons: ",ticket, cost, Database.getUserDB().get(user).getName());
+        String string = String.format("%s : %.2f paid by %s. Persons: ",ticket, cost, Database.getUserDB().get(payer).getName());
         for (UUID ID: this.Indebted.keySet()){
             string += String.format("%s, ", Database.getUserDB().get(ID).getName());
         }
