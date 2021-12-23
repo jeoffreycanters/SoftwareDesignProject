@@ -7,7 +7,7 @@ import java.util.Observer;
 public class UIFrame extends JFrame implements Observer, ActionListener {
 
     public UIFrame(){
-        super("MoneyTracker");
+        super("Jeoffrey is een hoer");
         this.setSize(1000,1000);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
