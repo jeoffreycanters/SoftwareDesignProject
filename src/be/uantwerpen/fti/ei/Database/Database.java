@@ -4,6 +4,7 @@ import be.uantwerpen.fti.ei.Tickets.Tickets;
 import be.uantwerpen.fti.ei.Users.User;
 
 
+import javax.xml.crypto.Data;
 import java.util.*;
 import java.util.function.Consumer;
 
@@ -37,11 +38,25 @@ public class Database<T> extends Observable implements Iterable<T> {
         this.notifyObservers();
     }
 
+    public T get(UUID id) {return this.dbMap.get(id);}
 
+    public static Database<User> getUserDB() {
+        if(userDB == null){
+            userDB = new Database<>();
+        }
+        return userDB;
+    }
 
+    public static Database<Tickets> getTicketDB(){
+        if(ticketDB == null){
+            ticketDB = new Database<>();
+        }
+        return  ticketDB;
+    }
 
-
-
+    public Integer getSize() {
+        return this.dbMap.size();
+    }
 
     @Override
     public Iterator<T> iterator() {

@@ -1,5 +1,6 @@
 package be.uantwerpen.fti.ei.Tickets;
 
+import be.uantwerpen.fti.ei.Database.Database;
 import be.uantwerpen.fti.ei.Users.User;
 
 import java.util.ArrayList;
@@ -70,6 +71,6 @@ public class Tickets {
 
     @Override
     public String toString(){
-        String string = String.format("%s : %.2f paid by %s. Persons: ",ticket,price, DatabaseUsers.getPersonDB().get(user).getName());
+        String string = String.format("%s : %.2f paid by %s. Persons: ",ticket,price, Database.getUserDB().get(user).getName());
     }
 }
