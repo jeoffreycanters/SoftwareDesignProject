@@ -1,6 +1,6 @@
 package be.uantwerpen.fti.ei;
 
-import be.uantwerpen.fti.ei.Database.DatabaseTickets;
+
 
 public class Main {
 
@@ -12,8 +12,7 @@ public class Main {
     public Main(){}
 
     public void run(){
-        DatabaseTickets dbt = TicketRegistrationDB.getInstance();
-        TicketController register = new TicketRegistrationController(dbt);
+
 
     }
 }
