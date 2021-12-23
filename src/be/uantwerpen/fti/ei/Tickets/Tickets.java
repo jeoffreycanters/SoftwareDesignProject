@@ -13,7 +13,7 @@ public class Tickets {
     protected String ticket;
     protected UUID ID;
     protected UUID user;
-    protected double price = 0;
+    protected double cost = 0;
     protected HashMap<UUID, Double> Indebted;
 
     public Tickets(String ticket, UUID user){
@@ -39,8 +39,8 @@ public class Tickets {
         return user;
     }
 
-    public double getPrice() {
-        return price;
+    public double getCost() {
+        return cost;
     }
 
     public HashMap<UUID, Double> getIndebted() {
@@ -71,7 +71,7 @@ public class Tickets {
 
     @Override
     public String toString(){
-        String string = String.format("%s : %.2f paid by %s. Persons: ",ticket,price, Database.getUserDB().get(user).getName());
+        String string = String.format("%s : %.2f paid by %s. Persons: ",ticket, cost, Database.getUserDB().get(user).getName());
         for (UUID ID: this.Indebted.keySet()){
             string += String.format("%s, ", Database.getUserDB().get(ID).getName());
         }

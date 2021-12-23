@@ -111,8 +111,8 @@ public class RandomPanel extends JPanel implements ActionListener, TicketPanel {
         TicketRandom TR = (TicketRandom) controller.createTicket(TRF, ticket, user);
         for(int j=0;j<i;j++){
             JSpinner Spinner = (JSpinner) (this.SpinnersArray.get(j));
-            Double Price = (Double) (Spinner.getValue());
-            TR.addIndebted((User) this.ComboBoxArray.get(j).getSelectedItem(), Price);
+            Double Cost = (Double) (Spinner.getValue());
+            TR.addIndebted((User) this.ComboBoxArray.get(j).getSelectedItem(), Cost);
         }
         return TR;
     }
