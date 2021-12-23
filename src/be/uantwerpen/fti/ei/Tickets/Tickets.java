@@ -1,6 +1,5 @@
 package be.uantwerpen.fti.ei.Tickets;
 
-import be.uantwerpen.fti.ei.Database.DatabaseUsers;
 import be.uantwerpen.fti.ei.Users.User;
 
 import java.util.ArrayList;
