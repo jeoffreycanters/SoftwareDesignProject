@@ -7,9 +7,9 @@ import be.uantwerpen.fti.ei.Tickets.TicketEven;
 import be.uantwerpen.fti.ei.Tickets.Tickets;
 import be.uantwerpen.fti.ei.Users.User;
 
-import javax.naming.ldap.Control;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
@@ -87,12 +87,23 @@ public class EvenPanel extends JPanel implements ActionListener, TicketPanel {
     }
 
     @Override
+    public void actionPerformed(ActionEvent e){
+        if(e.getActionCommand().equals("Add user"))
+            ExtraUserLine();
+        else if(e.getActionCommand().equals("Remove user"))
+            LessUserLine();
+        SwingUtilities.updateComponentTreeUI(this);
+    }
+
+    @Override
     public Tickets Create(String ticket, User user, double price, Controller controller){
         TicketEvenFactory TEF = new TicketEvenFactory();
-        //
-        //
+        TicketEven TE = (TicketEven) controller.createTicket(TEF, ticket, user);
+        TE.setPrice(price);
         for(int j=0;j<i;j++){
-            //
+            TE.addIndebted((User) ComboBoxArray.get(j).getSelectedItem());
         }
+        return TE;
     }
+
 }
