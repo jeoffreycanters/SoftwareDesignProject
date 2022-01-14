@@ -25,6 +25,7 @@ public class TicketWindow extends JFrame implements ActionListener {
 
     public TicketWindow(Controller controller){
         super("Money Tracker");
+        this.controller = controller;
         this.setSize(1000,500);
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         Initialise();
@@ -117,7 +118,7 @@ public class TicketWindow extends JFrame implements ActionListener {
                 this.setVisible(false);
                 this.dispose();
                 break;
-            case"Create ticket":
+            case"Create Ticket":
                 if(isEvenTicket){
                     EP.Create(this.TextField.getText(), (User) this.PayerComboBox.getSelectedItem(), (Double) this.PriceField.getValue(), this.controller);
                     this.setVisible(false);

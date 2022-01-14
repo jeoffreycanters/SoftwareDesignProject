@@ -27,7 +27,9 @@ public class EvenPanel extends JPanel implements ActionListener, TicketPanel {
         JLabel Label = new JLabel("Add users to ticket");
         AddComponent(Label, 0,0,1,1, new Insets(10,50,10,10), false);
         Database.getUserDB().forEach(UserArrayList::add);
-
+        ExtraUserLine();
+        this.AddUserButton.addActionListener(this);
+        this.RemoveUserButton.addActionListener(this);
     }
 
     private void AddComponent(Component component, int row, int column, int width, int height, Insets insets, boolean fill){
