@@ -100,7 +100,7 @@ public class EvenPanel extends JPanel implements ActionListener, TicketPanel {
     @Override
     public Tickets Create(String ticket, User user, double cost, Controller controller){
         TicketEvenFactory TEF = new TicketEvenFactory();
-        TicketEven TE = (TicketEven) controller.createTicket(TEF, ticket, user);
+        TicketEven TE = (TicketEven) controller.createTickets(TEF, ticket, user);
         TE.setCost(cost);
         for(int j=0;j<i;j++){
             TE.addIndebted((User) ComboBoxArray.get(j).getSelectedItem());

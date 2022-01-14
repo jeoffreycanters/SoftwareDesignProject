@@ -7,7 +7,7 @@ import java.util.UUID;
 
 public class TicketEvenFactory extends TicketFactory{
     @Override
-    public Tickets createTicket(String ticketType, UUID Payer) {
+    public Tickets createTickets(String ticketType, UUID Payer) {
         return new TicketEven(ticketType, Payer);
     }
 }

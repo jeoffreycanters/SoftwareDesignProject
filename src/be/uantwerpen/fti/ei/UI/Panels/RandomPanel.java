@@ -108,7 +108,7 @@ public class RandomPanel extends JPanel implements ActionListener, TicketPanel {
     @Override
     public Tickets Create(String ticket, User user, double price, Controller controller) {
         TicketRandomFactory TRF = new TicketRandomFactory();
-        TicketRandom TR = (TicketRandom) controller.createTicket(TRF, ticket, user);
+        TicketRandom TR = (TicketRandom) controller.createTickets(TRF, ticket, user);
         for(int j=0;j<i;j++){
             JSpinner Spinner = (JSpinner) (this.SpinnersArray.get(j));
             Double Cost = (Double) (Spinner.getValue());

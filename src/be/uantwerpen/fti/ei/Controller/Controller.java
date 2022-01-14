@@ -11,28 +11,28 @@ import java.util.UUID;
 
 public class Controller {
 
-    public Tickets createTicket(TicketFactory tf, String ticketType, UUID Payer){
-        Tickets t = tf.createTicket(ticketType, Payer);
+    public Tickets createTickets(TicketFactory tf, String ticketType, UUID Payer){
+        Tickets t = tf.createTickets(ticketType, Payer);
         Database.getTicketDB().add(t.getID(),t);
         return t;
     }
 
-    public Tickets createTicket(TicketFactory tf, String ticketType, UUID Payer, ArrayList<UUID> users){
-        Tickets t = tf.createTicket(ticketType, Payer);
+    public Tickets createTickets(TicketFactory tf, String ticketType, UUID Payer, ArrayList<UUID> users){
+        Tickets t = tf.createTickets(ticketType, Payer);
         t.setIndebted(users);
         Database.getTicketDB().add(t.getID(),t);
         return t;
     }
 
-    public Tickets createTicket(TicketFactory tf, String ticketType, User Payer, ArrayList<UUID> users){
-        Tickets t = tf.createTicket(ticketType, Payer.getID());
+    public Tickets createTickets(TicketFactory tf, String ticketType, User Payer, ArrayList<UUID> users){
+        Tickets t = tf.createTickets(ticketType, Payer.getID());
         t.setIndebted(users);
         Database.getTicketDB().add(UUID.randomUUID(), t);
         return t;
     }
 
-     public Tickets createTicket(TicketFactory tf, String ticketType, User Payer){
-        Tickets t = tf.createTicket(ticketType,Payer.getID());
+     public Tickets createTickets(TicketFactory tf, String ticketType, User Payer){
+        Tickets t = tf.createTickets(ticketType,Payer.getID());
         Database.getTicketDB().add(t.getID(), t);
         return t;
      }

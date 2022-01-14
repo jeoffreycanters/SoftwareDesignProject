@@ -32,8 +32,8 @@ public class test {
         Database.getUserDB().add(u1.getID(),u1);
         Database.getUserDB().add(u2.getID(),u2);
         Database.getUserDB().add(u3.getID(),u3);
-        this.ticketR = (TicketRandom) controller.createTicket(new TicketRandomFactory(), "TicketRandomTest", u1);
-        this.ticketE = (TicketEven) controller.createTicket(new TicketEvenFactory(), "TicketEvenTest", u1);
+        this.ticketR = (TicketRandom) controller.createTickets(new TicketRandomFactory(), "TicketRandomTest", u1);
+        this.ticketE = (TicketEven) controller.createTickets(new TicketEvenFactory(), "TicketEvenTest", u1);
     }
 
     @Test
@@ -46,9 +46,9 @@ public class test {
     }
 
     @Test
-    public void createEvenTicketT(){
+    public void createEvenTicket(){
         int size = Database.getTicketDB().getSize();
-        TicketEven te = (TicketEven) controller.createTicket(new TicketEvenFactory(), "TestEvenTicket", u1);
+        TicketEven te = (TicketEven) controller.createTickets(new TicketEvenFactory(), "TestEvenTicket", u1);
         Assert.assertEquals(size+1, Database.getTicketDB().getSize(), 0.01);
         Assert.assertNotNull(Database.getTicketDB().get(te.getID()));
         Assert.assertEquals("TestEvenTicket", Database.getTicketDB().get(te.getID()).getTicket());
@@ -59,7 +59,7 @@ public class test {
     @Test
     public void createRandomTicketT(){
         int size = Database.getTicketDB().getSize();
-        TicketRandom tr = (TicketRandom) controller.createTicket(new TicketRandomFactory(), "TestRandomTicket", u1);
+        TicketRandom tr = (TicketRandom) controller.createTickets(new TicketRandomFactory(), "TestRandomTicket", u1);
         Assert.assertEquals(size+1, Database.getTicketDB().getSize(), 0.01);
         Assert.assertNotNull(Database.getTicketDB().get(tr.getID()));
         Assert.assertEquals("TestRandomTicket", Database.getTicketDB().get(tr.getID()).getTicket());
@@ -82,7 +82,7 @@ public class test {
         ticketE.addIndebted(u3);
         ticketE.setCost(30.0);
 
-        TicketEven te2 = (TicketEven) controller.createTicket(new TicketEvenFactory(), "EvenTicket2", u2);
+        TicketEven te2 = (TicketEven) controller.createTickets(new TicketEvenFactory(), "EvenTicket2", u2);
         te2.addIndebted(u1);
         te2.addIndebted(u2);
         te2.addIndebted(u3);

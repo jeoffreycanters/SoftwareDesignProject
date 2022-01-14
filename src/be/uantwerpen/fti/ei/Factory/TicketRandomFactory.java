@@ -7,7 +7,7 @@ import java.util.UUID;
 
 public class TicketRandomFactory extends TicketFactory{
     @Override
-    public Tickets createTicket(String ticketType, UUID Payer) {
+    public Tickets createTickets(String ticketType, UUID Payer) {
         return new TicketRandom(ticketType, Payer);
     }
 }
