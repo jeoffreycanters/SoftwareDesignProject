@@ -29,13 +29,6 @@ public class Database<T> extends Observable implements Iterable<T> {
         this.notifyObservers();
     }
 
-    public void remove(T t){
-        if(dbMap.containsKey(t))
-            this.dbMap.remove(t);
-        this.setChanged();
-        this.notifyObservers();
-    }
-
     public T get(UUID id) {return this.dbMap.get(id);}
 
     public static Database<User> getUserDB() {
@@ -58,12 +51,12 @@ public class Database<T> extends Observable implements Iterable<T> {
 
     @Override
     public Iterator<T> iterator() {
-        return null;
+        return this.dbMap.values().iterator();
     }
 
     @Override
     public void forEach(Consumer<? super T> action) {
-        this.dbMap.values().iterator();
+        this.dbMap.values().forEach(action);
     }
 
     @Override

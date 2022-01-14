@@ -25,7 +25,7 @@ public class TicketWindow extends JFrame implements ActionListener {
 
     public TicketWindow(Controller controller){
         super("Money Tracker");
-        this.setSize(1000,1000);
+        this.setSize(1000,500);
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         Initialise();
         this.setVisible(true);

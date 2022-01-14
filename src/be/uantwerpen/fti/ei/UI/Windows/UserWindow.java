@@ -39,7 +39,7 @@ public class UserWindow extends JFrame implements ActionListener {
 
         JButton CancelButton = new JButton("Cancel");
         CancelButton.addActionListener(this);
-        c.gridx = 2;
+        c.gridx = 0;
         c.gridy = 2;
         this.add(CancelButton, c);
 
@@ -58,6 +58,7 @@ public class UserWindow extends JFrame implements ActionListener {
             Database.getUserDB().add(user.getID(), user);
             this.setVisible(false);
             this.dispose();
+
         }
         else if(e.getActionCommand().equals("Cancel")){
             this.setVisible(false);
