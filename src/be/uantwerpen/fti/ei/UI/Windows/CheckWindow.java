@@ -2,7 +2,6 @@ package be.uantwerpen.fti.ei.UI.Windows;
 
 import be.uantwerpen.fti.ei.Check.Check;
 import be.uantwerpen.fti.ei.Database.Database;
-import be.uantwerpen.fti.ei.Observers.ObserverNotify;
 
 import javax.swing.*;
 import java.awt.*;
@@ -90,7 +89,7 @@ public class CheckWindow extends JFrame implements ActionListener, Observer {
     {
         try
         {
-            FileWriter fileWriter = new FileWriter("./MoneySplitter.txt",true);
+            FileWriter fileWriter = new FileWriter("./MoneyTracker.txt",true);
             fileWriter.write("********************************\n");
             DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm:ss dd/MM/yyyy");
             LocalDateTime now = LocalDateTime.now();

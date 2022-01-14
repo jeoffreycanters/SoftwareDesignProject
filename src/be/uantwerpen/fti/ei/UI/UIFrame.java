@@ -19,7 +19,7 @@ public class UIFrame extends JFrame implements Observer, ActionListener {
 
     public UIFrame(){
         super("Money Tracker");
-        this.setSize(1000,1000);
+        this.setSize(1000,500);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         Database.getTicketDB().addObserver((this));
         Database.getUserDB().addObserver(this);
@@ -30,10 +30,10 @@ public class UIFrame extends JFrame implements Observer, ActionListener {
     private void initialise(){
         this.setLayout(new BorderLayout());
         JSplitPane SplitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, new UserDBPanel(), new TicketsDBPanel(controller));
-        SplitPane.setResizeWeight(0.4);
+        SplitPane.setResizeWeight(0.5);
         this.add(SplitPane,BorderLayout.CENTER);
         JButton CalcButton = new JButton("Calculate");
-        CalcButton.setFont(new Font("Sans", Font.PLAIN, 50));
+        CalcButton.setFont(new Font("Sans", Font.PLAIN, 20));
         CalcButton.addActionListener(this);
         this.add(CalcButton,BorderLayout.SOUTH);
     }

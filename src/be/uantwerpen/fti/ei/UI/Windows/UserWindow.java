@@ -58,6 +58,7 @@ public class UserWindow extends JFrame implements ActionListener {
             Database.getUserDB().add(user.getID(), user);
             this.setVisible(false);
             this.dispose();
+
         }
         else if(e.getActionCommand().equals("Cancel")){
             this.setVisible(false);

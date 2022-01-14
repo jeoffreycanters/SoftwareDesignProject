@@ -20,13 +20,16 @@ public class UserDBPanel extends JPanel implements ActionListener, Observer {
 
     public UserDBPanel(){
         Database.getUserDB().addObserver(this);
+
         this.setLayout(new GridBagLayout());
         GridBagConstraints c = new GridBagConstraints();
         c.gridx = 1;
         c.gridy = 0;
         JLabel Label = new JLabel("Users");
         this.add(Label,c);
+
         Database.getUserDB().forEach(UserArrayList::add);
+
         UserArrayList.forEach(ListModel::addElement);
         List = new JList<>(ListModel);
         List.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
@@ -34,11 +37,13 @@ public class UserDBPanel extends JPanel implements ActionListener, Observer {
         c.gridx = 1;
         c.gridy = 1;
         this.add(List,c);
+
         JButton AddUserButton = new JButton("Add user");
         AddUserButton.addActionListener(this);
         c.gridy = 2;
         c.gridx = 0;
         this.add(AddUserButton,c);
+
         JButton RemoveUserButton = new JButton("Remove user");
         RemoveUserButton.addActionListener(this);
         c.gridy = 2;
