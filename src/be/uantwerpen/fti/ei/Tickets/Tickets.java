@@ -9,15 +9,14 @@ import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
-public class Tickets {
-    public UUID getPayer;
+public abstract class Tickets {
     protected String ticket;
     protected UUID ID;
     protected UUID payer;
     protected double cost = 0;
     protected HashMap<UUID, Double> Indebted;
 
-    public Tickets(String ticket, UUID user){
+    public Tickets(String ticket, UUID payer){
         this.ticket = ticket;
         this.payer = payer;
         this.ID = UUID.randomUUID();
