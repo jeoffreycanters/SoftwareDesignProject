@@ -16,7 +16,7 @@ import java.util.ArrayList;
 public class EvenPanel extends JPanel implements ActionListener, TicketPanel {
     private ArrayList<Object> UserArrayList = new ArrayList<>();
     private ArrayList<User> RemainingUsers = new ArrayList<>();
-    private ArrayList<JComboBox<Object>> ComboBoxArray = new ArrayList<>(); //Geen idee wat dit is
+    private ArrayList<JComboBox<Object>> ComboBoxArray = new ArrayList<>();
     private int i = 0;
     private int row = 0;
     JButton AddUserButton = new JButton("Add user");
