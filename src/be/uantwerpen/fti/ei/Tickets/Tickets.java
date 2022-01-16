@@ -67,6 +67,7 @@ public abstract class Tickets {
 
     public void setIndebted(List<User> users){
         ArrayList<UUID> UUIDList = (ArrayList<UUID>) users.stream().map(User::getID).collect(Collectors.toList());
+        this.setIndebted(UUIDList);
     }
 
     @Override
