@@ -8,8 +8,8 @@ import java.util.function.Consumer;
 
 public class Database<T> extends Observable implements Iterable<T> {
 
-    static Database<Tickets> ticketDB;
-    static Database<User> userDB;
+    private static Database<Tickets> ticketDB;
+    private static Database<User> userDB;
     private HashMap<UUID, T> dbMap;
 
     private Database() {
